@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form name="contact" method="POST" data-netlify="true">
+      <label>
+        Name:
+        <input type="text" name="name" required>
+      </label>
+      <label>
+        Email:
+        <input type="email" name="email" required>
+      </label>
+      <label>
+        Phone Number:
+        <input type="tel" name="phone">
+      </label>
+      <label>
+        Message:
+        <textarea name="message" rows="5" required></textarea>
+      </label>
+
+      <fieldset>
+        <legend>Select the position you're interested in:</legend>
+        <label><input type="checkbox" name="products" value="marketing"> Marketing </label>
+        <label><input type="checkbox" name="products" value="Social Media"> Social Media</label>
+        <label><input type="checkbox" name="products" value="Volunteer"> Volunteer </label>
+        <label><input type="checkbox" name="products" value="Organizer"> Organizer </label>
+        <label><input type="checkbox" name="products" value="programming"> Programmer </label>
+      </fieldset>
+      <div class="social-media">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook" />
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/twitter.svg" alt="Twitter" />
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram" />
+        </a>
+        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+          <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/linkedin.svg" alt="LinkedIn" />
+        </a>
+      </div>
+      
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+</body>
+</html>
