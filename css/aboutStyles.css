@@ -1,95 +1,416 @@
+:root {
+  --primary: #ae845b;
+  --secondary: #252e63;
+  --accent: #d4c3b0;
+  --light: #fff4ef;
+  --dark: #212529;
+  --transition: all 0.3s ease;
+}
+
 body {
-  background-color: #ffffff;
-  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
 }
 
-h1 {
+/* Hero Section */
+.hero-section {
+  position: relative;
+  height: 80vh;
+  background: linear-gradient(135deg, var(--secondary), var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
   text-align: center;
-  margin: 2rem 0;
-  color: #343C99;
-}
-
-.row {
-  margin-bottom: 4rem;
-}
-
-.flip-card {
-  perspective: 1000px;
-  height: 250px;
   margin-bottom: 2rem;
 }
 
-.flip-card-inner {
+.hero-section .container {
+  z-index: 1;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+}
+
+.hero-buttons .btn {
+  padding: 0.8rem 2rem;
+  font-weight: 500;
+  border-radius: 30px;
+  transition: var(--transition);
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Mission Section */
+.mission-section {
+  padding: 5rem 0;
+}
+
+.mission-section .section-title {
+  color: var(--secondary);
+  margin-bottom: 2rem;
+  position: relative;
+  text-align: left;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.mission-section .section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.section-title.text-center {
+  text-align: center;
+}
+
+.section-title.text-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mission-image {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.mission-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.mission-image:hover img {
+  transform: scale(1.05);
+}
+
+.stat-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.stat-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.stat-item i {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--secondary);
+  margin: 0.5rem 0;
+}
+
+.stat-text {
+  color: #666;
+  margin: 0;
+}
+
+/* Offices Section */
+.offices-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+}
+
+.office-card {
+  height: 400px;
+  perspective: 1000px;
+  margin-bottom: 2rem;
+}
+
+.office-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   transition: transform 0.8s;
   transform-style: preserve-3d;
+  cursor: pointer;
 }
 
-.flip-card.flipped .flip-card-inner {
+.office-card:hover .office-card-inner {
   transform: rotateY(180deg);
 }
 
-.flip-card-front,
-.flip-card-back {
+.office-card-front,
+.office-card-back {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 1rem;
+  border-radius: 15px;
   overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  background: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-.card-image {
-  width: 40%;
-  height: 100%;
+.office-card-front {
+  background: white;
+}
+
+.office-card-front img {
+  width: 100%;
+  height: 200px;
   object-fit: cover;
-  float: left;
-  opacity: 0;
-  animation: fadeIn 1.5s forwards;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.card-content {
-  width: 60%;
-  float: right;
-  padding: 1.5rem;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.flip-card-back {
-  transform: rotateY(180deg);
+.office-content {
   padding: 1.5rem;
 }
 
-.card-title {
-  font-weight: bold;
-  color: #343C99;
+.office-content h3 {
+  color: var(--secondary);
+  font-size: 1.5rem;
   margin-bottom: 1rem;
 }
 
-.btn {
-  margin-top: auto;
-  background-color: #343C99;
+.office-content p {
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.learn-more {
+  color: var(--primary);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--transition);
+}
+
+.learn-more i {
+  transition: var(--transition);
+}
+
+.office-card:hover .learn-more i {
+  transform: translateX(5px);
+}
+
+.office-card-back {
+  background: var(--primary);
+  transform: rotateY(180deg);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: white;
-  align-self: flex-start;
 }
 
-.section-container {
-  margin-bottom: 3rem;
+.office-card-back h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
+.office-card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.office-card-back ul li {
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.office-card-back ul li::before {
+  content: '•';
+  color: var(--accent);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.manager-info {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.manager-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.manager-info div {
+  flex: 1;
+}
+
+.manager-info h4 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.manager-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Impact Section */
+.impact-section {
+  padding: 5rem 0;
+  background: white;
+}
+
+.impact-stat-box {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.impact-stat-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.impact-icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.impact-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.impact-text {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+/* Volunteer Section */
+.volunteer-section {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.volunteer-btn {
+  background-color: white;
+  color: var(--primary);
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: var(--transition);
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.volunteer-btn:hover {
+  background-color: var(--light);
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 991.98px) {
+  .hero-section {
+    height: 70vh;
+  }
+
+  .office-card {
+    height: 450px;
+  }
+
+  .mission-section .col-lg-6:first-child {
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    height: 60vh;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .office-card {
+    height: 400px;
+  }
+
+  .impact-stat-box {
+    margin-bottom: 2rem;
+  }
+
+  .stat-item {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+  }
+
+  .office-card {
+    height: 350px;
+  }
+
+  .mission-section {
+    text-align: center;
+  }
+
+  .mission-section .section-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
