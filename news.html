@@ -50,12 +50,50 @@
     </div>
   </nav>
 
-  <section class="news-hero">
-    <div class="container">
-      <h1 class="display-4 fw-bold text-center mb-4">Latest News & Updates</h1>
-      <p class="lead text-center mb-5">Stay informed about our community's latest activities and achievements.</p>
+  <div id="newsCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#newsCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
-  </section>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://alleycatadvocates.org/wp-content/uploads/winter-shelters.png" class="d-block w-100" alt="Stray Cat Winter Shelter">
+        <div class="carousel-caption">
+          <span class="category">Featured</span>
+          <h2>A City Where No Stray Sleeps Cold or Hungry</h2>
+          <p>This weekend, a group of volunteers launched a life-saving project for stray animals, building over 20 insulated shelters.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.goodhopevolunteers.com/uploads/_processed_/8/0/csm_Caring_for_the_Elderly_1_01_67329c5b4a.jpg" class="d-block w-100" alt="Caring for the Elderly">
+        <div class="carousel-caption">
+          <span class="category">Community</span>
+          <h2>Small Packages, Big Smiles: Caring for the Elderly</h2>
+          <p>Volunteers delivered care packages filled with food, medicine, and warm blankets to over 50 elderly residents.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="https://images.pexels.com/photos/4144290/pexels-photo-4144290.jpeg" class="d-block w-100" alt="Robotics for Kids">
+        <div class="carousel-caption">
+          <span class="category">Education</span>
+          <h2>Robotics for Kids Project Kicks Off</h2>
+          <p>Our new initiative brings basic robotics education to over 120 students in rural schools.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
 
   <section class="featured-news py-5">
     <div class="container">
@@ -66,7 +104,7 @@
             <div class="featured-content">
               <span class="category">Featured</span>
                <h2 class="mb-3">A City Where No Stray Sleeps Cold or Hungry</h2>
-              <p class="lead">This weekend, a group of volunteers launched a life-saving project for stray animals. With donated materials and teamwork, they built over 20 insulated shelters and set up food stations across the city. “We want every animal to feel safe, fed, and warm,” said the project leader.
+              <p class="lead">This weekend, a group of volunteers launched a life-saving project for stray animals. With donated materials and teamwork, they built over 20 insulated shelters and set up food stations across the city. "We want every animal to feel safe, fed, and warm," said the project leader.
                </p>
               <div class="article-meta">
                 <span><i class="far fa-calendar me-2"></i>March 15, 2024</span>
@@ -225,5 +263,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/banner-animation.js"></script>
 </body>
 </html>

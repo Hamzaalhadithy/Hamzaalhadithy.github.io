@@ -1,9 +1,14 @@
 :root {
-  --primary: #ae845b;
-  --secondary: #252e63;
-  --accent: #d4c3b0;
-  --light: #fff4ef;
-  --dark: #212529;
+  --primary: #4A90E2;    /* Modern blue */
+  --secondary: #2C3E50;  /* Deep navy */
+  --accent: #16A085;     /* Teal */
+  --light: #F5F7FA;      /* Light gray */
+  --dark: #2C3E50;       /* Deep navy */
+  --success: #27AE60;    /* Green */
+  --warning: #F1C40F;    /* Yellow */
+  --danger: #E74C3C;     /* Red */
+  --text-primary: #2C3E50;   /* Main text color */
+  --text-secondary: #7F8C8D; /* Secondary text color */
   --transition: all 0.3s ease;
 }
 
@@ -62,6 +67,7 @@ body, html {
 /* Featured Section */
 .featured-section {
   padding: 5rem 0;
+  background: white;
 }
 
 .section-title {
@@ -86,16 +92,18 @@ body, html {
   background: white;
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 20px rgba(44, 62, 80, 0.05);
   transition: var(--transition);
   height: 100%;
   display: flex;
   flex-direction: column;
+  border: 1px solid rgba(74, 144, 226, 0.1);
 }
 
 .featured-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.1);
+  border-color: rgba(74, 144, 226, 0.2);
 }
 
 .featured-icon {
@@ -107,18 +115,21 @@ body, html {
 
 .featured-card:hover .featured-icon {
   transform: scale(1.1);
+  color: var(--accent);
 }
 
 .featured-card h3 {
   color: var(--secondary);
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .featured-card p {
-  color: #666;
+  color: var(--text-secondary);
   margin-bottom: 1.5rem;
   flex-grow: 1;
+  line-height: 1.6;
 }
 
 .learn-more {
@@ -132,7 +143,7 @@ body, html {
 }
 
 .learn-more:hover {
-  color: var(--secondary);
+  color: var(--accent);
 }
 
 .learn-more i {
@@ -145,8 +156,8 @@ body, html {
 
 /* Impact Section */
 .impact-section {
-  position: relative;
-  overflow: hidden;
+  background-color: var(--light);
+  padding: 5rem 0;
 }
 
 .impact-image {
@@ -170,35 +181,44 @@ body, html {
 
 .impact-stat-box {
   background: white;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 20px rgba(44, 62, 80, 0.05);
   transition: var(--transition);
   text-align: center;
   height: 100%;
+  border: 1px solid rgba(74, 144, 226, 0.1);
 }
 
 .impact-stat-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 25px rgba(44, 62, 80, 0.1);
+  border-color: rgba(74, 144, 226, 0.2);
 }
 
 .impact-icon {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--primary);
   margin-bottom: 1rem;
+  transition: var(--transition);
+}
+
+.impact-stat-box:hover .impact-icon {
+  color: var(--accent);
+  transform: scale(1.1);
 }
 
 .impact-number {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: var(--secondary);
   margin-bottom: 0.5rem;
+  line-height: 1;
 }
 
 .impact-text {
-  font-size: 1rem;
-  color: #666;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
 }
 
 /* Volunteer Section */
@@ -207,6 +227,26 @@ body, html {
   color: white;
   padding: 5rem 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.volunteer-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    rgba(74, 144, 226, 0.1) 0%,
+    rgba(22, 160, 133, 0.1) 100%);
+  z-index: 0;
+}
+
+.volunteer-section .container {
+  position: relative;
+  z-index: 1;
 }
 
 .cta-buttons {
