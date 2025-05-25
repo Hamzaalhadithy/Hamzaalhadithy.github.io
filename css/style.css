@@ -208,12 +208,36 @@ h1 {
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   background: white;
+  display: flex;
+  flex-direction: column;
 }
 
 .flip-card-front img {
   height: 200px;
   object-fit: cover;
   width: 100%;
+  flex-shrink: 0;
+}
+
+.card-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.card-title {
+  font-weight: bold;
+  color: var(--secondary);
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+}
+
+.card-text {
+  flex-grow: 1;
+  margin-bottom: 1rem;
+  overflow-y: auto;
 }
 
 .flip-card-back {
@@ -241,26 +265,18 @@ h1 {
 
 .flip-card-back .btn {
   margin-top: auto;
+  background-color: var(--secondary);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  transition: var(--transition);
+  font-weight: 500;
   align-self: flex-start;
 }
 
-.card-body {
-  padding: 1.5rem;
-}
-
-.card-title {
-  font-weight: bold;
-  color: var(--secondary);
-  margin-bottom: 1rem;
-  font-size: 1.25rem;
-}
-
-.flip-card-back .card-title {
-  color: white;
-}
-
 .btn {
-  margin-top: 1rem;
+  margin-top: auto;
   background-color: var(--secondary);
   color: white;
   border: none;
@@ -315,11 +331,34 @@ h1 {
   }
   
   .flip-card {
-    height: 400px;
+    height: auto;
+    min-height: 450px;
   }
   
-  .section-title {
-    font-size: 1.5rem;
+  .flip-card-front,
+  .flip-card-back {
+    min-height: 450px;
+  }
+  
+  .card-body {
+    padding: 1.25rem;
+  }
+  
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .card-text {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
   }
 }
 
