@@ -25,7 +25,7 @@ body {
   position: relative;
   min-height: 100vh;
   background: linear-gradient(135deg, var(--secondary), var(--primary));
-  overflow: hidden;
+  overflow: visible;
   padding-top: 70px;
   display: flex;
   align-items: center;
@@ -51,7 +51,7 @@ body {
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 5;
   padding: 4rem 0;
   opacity: 0;
   animation: fadeInUp 1s ease-out forwards;
@@ -184,11 +184,16 @@ body {
   left: 0;
   width: 100%;
   z-index: 1;
-  filter: drop-shadow(0 -5px 5px rgba(0, 0, 0, 0.05));
+  pointer-events: none;
 }
 
 .hero-buttons {
   margin-top: 2rem;
+  margin-bottom: 4rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .hero-buttons .btn {
@@ -196,31 +201,31 @@ body {
   font-weight: 500;
   border-radius: 30px;
   transition: all 0.3s ease;
+  min-width: 200px;
+  text-align: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary);
+  color: white;
+  border: 2px solid transparent;
   position: relative;
-  z-index: 1;
 }
 
-.hero-buttons .btn::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  transition: width 0.6s ease, height 0.6s ease;
-  z-index: -1;
+.hero-buttons .btn-outline-light {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  color: white;
 }
 
-.hero-buttons .btn:hover::before {
-  width: 300px;
-  height: 300px;
+.hero-buttons .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
 }
 
-.hero-buttons .btn::after {
-  display: none;
+.hero-buttons .btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: white;
 }
 
 .btn-primary {
@@ -310,6 +315,15 @@ body {
   .stat-box {
     min-height: 100px;
     padding: 1.25rem 1rem;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+  
+  .hero-buttons .btn {
+    min-width: 180px;
+    padding: 0.875rem 1.75rem;
   }
 }
 
@@ -582,6 +596,12 @@ body {
   margin-right: 1rem;
   object-fit: cover;
   border: 2px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.manager-info:hover .manager-photo {
+  transform: scale(1.1);
 }
 
 .manager-info div {
@@ -696,4 +716,19 @@ body {
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(22, 160, 133, 0.25);
+}
+
+@media (min-width: 992px) {
+  .hero-section {
+    padding-bottom: 100px;
+    margin-bottom: -2px;
+  }
+  
+  .hero-shape {
+    bottom: 0;
+  }
+  
+  .hero-buttons {
+    margin-bottom: 0;
+  }
 }
